@@ -1,3 +1,7 @@
+# Builds
+node_modules
+build
+neighborModels.js
 # Logs
 logs
 *.log
