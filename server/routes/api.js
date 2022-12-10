@@ -5,13 +5,22 @@ const neighborControllers = require('../controllers/neighborControllers');
 
 
 router.get('/', neighborControllers.getConsumers, (req, res) => {
-    return res.status(200)
-    // what are we sending in res locals - will be determined in the controller 
+    res.status(200).json(res.locals.consumers);
 });
 
 router.post('/', neighborControllers.createConsumers, (req, res) => {
-    return res.status(200)
+    res.status(200).json({})
 })
+
+router.delete('/', neighborControllers.deleteConsumers, (req, res) => {
+    res.status(200).json({})
+})
+
+router.patch('/:_id', neighborControllers.updateConsumer, (req, res) => {
+    res.status(200).json({})
+})
+
+
 
 
 module.exports = router

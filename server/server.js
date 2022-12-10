@@ -14,7 +14,9 @@ app.use(cors());
 app.use(express.static(path.resolve(__dirname, '../client')));
 
 // define route handlers
-app.use('/', apiRouter);
+app.use('/api', apiRouter, (req, res) => {
+    return res.status(200).send(res.locals.consumers)
+});
 
 // define catch all error handler 
 app.get('*', (req, res) => {
