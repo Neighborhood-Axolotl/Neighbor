@@ -243,7 +243,10 @@ table {
   padding-left: 2em;
   margin-top: 10rem;
   text-align: center;
-
+  .consumerAlignment {
+    text-align: left;
+    margin-left: 7rem;
+  }
   .consMerchContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -280,6 +283,16 @@ table {
   .merchantLogin {
     border-left: 2px solid black;
     font-size: 1.5rem;
+
+    .merchantForm {
+      text-align: left;
+      margin-left: 12rem;
+    }
+
+    .merchantAlignment {
+      text-align: left;
+      margin-left: 8rem;
+    }
     #merchantUsername {
       border-radius: 4rem;
       height: 1.25rem;
@@ -313,11 +326,14 @@ table {
     }
   }
 }
-
-//all inputs
-input {
-  border-radius: 4rem;
-  margin: .75rem;
-  height: 1.25rem;
-}
 // CREATE ACCOUNT PAGE BUSINESS INFO END
+
+// all form inputs
+form {
+  input {
+    border-radius: 4rem;
+    margin: 0.75rem;
+    height: 1.25rem;
+  }
+}
+
