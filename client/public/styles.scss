@@ -1,76 +1,323 @@
-// html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-// a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
-// small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
-// fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
-// article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup,
-// menu, nav, output, ruby, section, summary, time, mark, audio, video {
-// 	margin: 0;
-// 	padding: 0;
-// 	border: 0;
-// 	font-size: 100%;
-// 	font: inherit;
-// 	vertical-align: baseline;
-// }
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
 
-// article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-// 	display: block;
-// }
-
-// body {
-// 	line-height: 1;
-// }
-
-// ol, ul {
-// 	list-style: none;
-// }
-
-// blockquote, q {
-// 	quotes: none;
-// }
-
-// blockquote:before, blockquote:after, q:before, q:after {
-// 	content: '';
-// 	content: none;
-// }
-
-// table {
-// 	border-collapse: collapse;
-// 	border-spacing: 0;
-// }
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
 
 body {
-  background-color: #282426;
+  line-height: 1;
 }
 
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+// HOME PAGE START
 .homeContainer {
+  color: white;
   display: grid;
-  grid-template-columns: 1fr 1.5fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr;
   align-items: center;
   justify-items: center;
-}
+  background-color: #282426;
 
-// leftImage {
-
-// }
-
-// rightImage {
-
-// }
-
-.middleInterface {
-  margin-top: 200px;
-  color: rgb(210, 210, 210);
-  text-align: center;
-  h1 {
-    font-size: 6rem;
-    margin-bottom: 0px;
+  .leftImage {
+    margin: 0;
+    padding: 0;
+    width: 550px;
+    height: 950px;
   }
-	h2 {
-		font-size: xx-large;
-		margin-bottom: 200px;
-	}
-	div {
-		font-size: x-large;
-		margin: 10px;
-	}
+
+  .rightImage {
+    width: 550px;
+    height: 950px;
+  }
+
+  .middleImage {
+    margin-bottom: 5rem;
+    width: 100px;
+    height: 100px;
+  }
+
+  .neighborImage {
+    margin-bottom: 1rem;
+  }
+
+  .loginImage {
+    width: 70px;
+    height: auto;
+  }
+
+  .createAccountImage {
+    width: 180px;
+    height: auto;
+  }
+
+  .middleInterface {
+    margin-top: 25px;
+    color: rgb(210, 210, 210);
+    text-align: center;
+    h1 {
+      font-size: 6rem;
+      margin-bottom: 0px;
+    }
+    h2 {
+      font-size: xx-large;
+      margin-left: 7rem;
+      width: 500px;
+    }
+
+    .quoteSource {
+      margin-top: 20px;
+      margin-bottom: 200px;
+    }
+
+    div {
+      font-size: x-large;
+      margin: 10px;
+    }
+  }
 }
+// HOME PAGE END
+
+// NAVBAR START
+.navBar {
+  color: white;
+  background-color: #282426;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  padding-left: 5rem;
+  height: 7rem;
+
+  .leftImage {
+    width: 100px;
+    height: 100px;
+  }
+
+  .middleImage {
+    width: 400px;
+    height: 100px;
+  }
+
+  .teamAndAboutNeighbor {
+    text-align: center;
+  }
+
+  .teamImage {
+    padding-left: 10rem;
+  }
+
+  .aboutNeighborImage {
+    padding-left: 1rem;
+    width: 200px;
+    height: 30px;
+  }
+}
+// NAVBAR END
+
+// LOGIN PAGE AND CREATE ACCOUNT PAGE START
+.login {
+  text-align: center;
+  margin-top: 7rem;
+  font-size: 2.5rem;
+}
+
+.loginContainer {
+  padding-left: 2em;
+  margin-top: 10rem;
+  text-align: center;
+
+  .consMerchContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    justify-content: center;
+  }
+
+  .italics {
+    font-style: italic;
+    font-size: 1.75rem;
+  }
+
+  strong {
+    font-size: 2.5rem;
+    padding-right: 0.5em;
+  }
+
+  .userLogin {
+    font-size: 1.5rem;
+    #userInput {
+      border-radius: 4rem;
+      height: 1.25rem;
+    }
+  }
+
+  .userPW {
+    font-size: 1.5rem;
+    #userPW {
+      border-radius: 4rem;
+      height: 1.25rem;
+    }
+  }
+
+  .merchantLogin {
+    border-left: 2px solid black;
+    font-size: 1.5rem;
+    #merchantUsername {
+      border-radius: 4rem;
+      height: 1.25rem;
+    }
+    #merchantPassword {
+      border-radius: 4rem;
+      height: 1.25rem;
+    }
+  }
+}
+// LOGIN PAGE AND CREATE ACCOUNT PAGE END
+
+// CREATE ACCOUNT PAGE BUSINESS INFO START
+.businessInfo {
+  font-size: 1.5rem;
+  .merchantBusinessName {
+    #merchangeBusinessName {
+      border-radius: 4rem;
+      height: 1.25rem;
+    }
+    .merchangeAddress {
+      #merchangeAddress {
+        border-radius: 4rem;
+        height: 1.25rem;
+      }
+    }
+    .merchantZipCode {
+      #merchantZipCode {
+        border-radius: 4rem;
+      }
+    }
+  }
+}
+
+//all inputs
+input {
+  border-radius: 4rem;
+  margin: .75rem;
+  height: 1.25rem;
+}
+// CREATE ACCOUNT PAGE BUSINESS INFO END
