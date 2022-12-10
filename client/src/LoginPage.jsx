@@ -1,19 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import NavBar from './NavBar';
 import CreateAcctHeader from './CreateAcctHeader.jsx';
 import LoginHeader from './LoginHeader.jsx';
 import BusinessInfo from './BusinessInfo.jsx';
 
-{
-  /* <Switch>
-<Route path='/createAccount'>
-<BusinessInfo />
-</Route>
-</Switch> */
-}
-
 function LoginPage() {
+
+  const [data, setData] = useState([]);
+
+  useEffect(function () {
+    fetch('http://localhost:3000/api', 
+    {
+
+    })
+      .then((data) => data.json())
+      .then((info) => {
+        setData([...info]);
+        alert(info);
+      });
+  }, []);
+
   return (
     <div>
       <NavBar />
