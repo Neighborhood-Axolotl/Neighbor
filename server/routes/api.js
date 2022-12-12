@@ -3,23 +3,23 @@ const { restart } = require('nodemon');
 const router = express.Router();
 const neighborControllers = require('../controllers/neighborControllers');
 
-router.get('/', neighborControllers.getConsumers, (req, res) => {
+router.get('/:email', neighborControllers.getConsumers, (req, res) => {
   res.status(200).json(res.locals.consumers);
 });
 
 router.post(
-  '/createAccount',
+  '/',
   neighborControllers.createConsumers,
   (req, res) => {
-    res.status(200).json(res.locals.newConsumer);
+    res.status(200);
   }
 );
 
-router.delete('/', neighborControllers.deleteConsumers, (req, res) => {
+router.delete('/:_email', neighborControllers.deleteConsumers, (req, res) => {
   res.status(200).json({});
 });
 
-router.patch('/:_id', neighborControllers.updateConsumer, (req, res) => {
+router.patch('/:_email', neighborControllers.updateConsumer, (req, res) => {
   res.status(200).json({});
 });
 

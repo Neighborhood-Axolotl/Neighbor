@@ -22,7 +22,7 @@ const consumersSchema = new mongoose.Schema({
   lastName: { type: String, required: true },
   email: { type: String, required: true },
   password: { type: String, required: true },
-  zipCode: { type: Number },
+  zipCode: { type: String },
 });
 
 // export the module

@@ -6,15 +6,6 @@ function LandingPage() {
   const [data, setData] = useState([]);
   const [searchZipcode, setSearchZipcode] = useState(''); 
 
-  useEffect(() => {
-    fetch('http://localhost:3000/api')
-      .then((data) => data.json())
-      .then((info) => {
-        setData([...info]);
-      })
-      .catch((err) => console.log('Could not get user data', err)); 
-  }, []);
-
   return (
     
       <div className='landingPage'>

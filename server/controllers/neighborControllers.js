@@ -6,9 +6,9 @@ const neighborControllers = {};
 // email addresses will 100% be provided during login whereas we weren't sure if the unique id that mongo creates would be available when getConsumers is called
 // if id is available, should probably switch to that
 // get request to get consumer data needs to be an object containing the property email and the user email you're looking to get back
-neighborControllers.getConsumers = async ({ body }, res, next) => {
+neighborControllers.getConsumers = async (req, res, next) => {
   try {
-    res.locals.consumers = await Consumers.find({ email: body.email }).exec();
+    res.locals.consumers = await Consumers.find({ email: req.params.email}).exec();
     console.log('stored consumer: ', res.locals.consumers);
     return next();
   } catch (err) {
@@ -21,16 +21,16 @@ neighborControllers.getConsumers = async ({ body }, res, next) => {
 };
 
 // define controller for creating users (use .create)
-neighborControllers.createConsumers = async ({ body }, res, next) => {
+neighborControllers.createConsumers = ({ body }, res, next) => {
   try {
-    res.locals.newConsumer = await Consumers.create({
-      firstName: body.firstName,
-      lastName: body.lastName,
-      email: body.email,
-      password: body.password,
-      zipCode: body.zipCode,
+    Consumers.create({
+      firstName: body.body.firstName,
+      lastName: body.body.lastName,
+      email: body.body.email,
+      password: body.body.password,
+      zipCode: body.body.zipCode,
     });
-    console.log(body);
+    
     return next();
   } catch (err) {
     return next({
@@ -41,7 +41,7 @@ neighborControllers.createConsumers = async ({ body }, res, next) => {
   }
 };
 
-// define controller for deleting user (HINT: deleteone)
+// define controller for deleting user 
 neighborControllers.deleteConsumers = async ({ body }, res, next) => {
   try {
     await Consumers.deleteOne({ email: body.email }).exec();
