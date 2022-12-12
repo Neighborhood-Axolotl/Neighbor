@@ -33,21 +33,21 @@ function NavBar() {
         <img
         onClick={()=> history.push('/team')}
           className='teamImage'
-          src='https://i.imgur.com/L5aHpyB.png'
+          src='https://i.imgur.com/FFrUPpK.png'
           alt='Team'
         />
         
-        <img
+        | <img
         onClick={()=> history.push('/aboutus')}
           className='aboutNeighborImage'
-          src='https://i.imgur.com/dB8guhW.png'
+          src='https://i.imgur.com/su5pf5g.png'
           alt='About Neighbors'
         />
     
 
       
-          <img onClick={()=> history.push('/userinformation')} className='userInfo'
-          src= 'https://i.imgur.com/lLZ07PV.png'
+         | <img onClick={()=> history.push('/userinformation')} className='userInfo'
+          src= 'https://i.imgur.com/VWTc4IU.png'
           alt='User Information' 
           />
       </div>

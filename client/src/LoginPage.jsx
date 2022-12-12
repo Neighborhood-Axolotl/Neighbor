@@ -39,7 +39,7 @@ function LoginPage() {
             <form className='consumerForm' onSubmit={handleConsumerLogin}>
               <div className='userLogin'>
                 <label htmlFor='consumerEmailLogin'>
-                  email:
+                  email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <input
                     type='text'
                     id='consumerEmailLogin'
@@ -76,15 +76,17 @@ function LoginPage() {
             <form className='merchantForm' onSubmit={handleMerchantLogin}>
               <div className='merchantUsername'>
                 <label htmlFor='merchantUsernameLogin'>
-                  email:
-                  <input
-                    type='text'
-                    id='merchantEmailLogin'
-                    value={merchantEmailLogin}
-                    onChange={(event) => {
-                      setMerchantEmailLogin(event.target.value);
-                    }}
-                  />
+
+                  email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input 
+                type='text' 
+                id='merchantEmailLogin'
+                value={merchantEmailLogin}
+                onChange={(event) => {
+                  setMerchantEmailLogin(event.target.value)
+                }}
+                />
+
                 </label>
               </div>
               <div className='merchantPassword'>

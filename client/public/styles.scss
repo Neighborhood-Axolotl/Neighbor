@@ -236,6 +236,7 @@ table {
   display: flex;
   align-items: center;
   height: 7rem;
+  color: white;
 
   .leftNav {
     display: flex;
@@ -250,17 +251,19 @@ table {
   .leftImage {
     width: 75px;
     height: auto;
+    padding-right: 105px
   }
 
   .siteFontLogo {
     width: 400px;
     height: auto;
+    padding-left: 40px;
   }
 
   .rightNav {
     display: flex;
     float: right;
-    padding-right: 10px;
+    
   }
 
   .teamImage {
@@ -273,7 +276,7 @@ table {
   }
 
   .userInfo {
-    height: 17px; 
+    height: 20px; 
     width: auto; 
   }
 }
