@@ -24,6 +24,14 @@ function UserInformation({dummyEmail}) {
     history.push('/landing')
   }
 
+function delAcct () {
+  axios.delete(`http://localhost:3000/api/${data.email}`)
+  .then(()=> {
+    history.push('/')
+  })
+  .catch(err => console.log(err))
+}
+
  useEffect(() => {
     axios.get(`http://localhost:3000/api/${dummyEmail}`, {
     })
@@ -112,7 +120,7 @@ function UserInformation({dummyEmail}) {
           <br />
           <br />
           <div id='trashContainer'>
-          <img id = 'trash' src='https://i.imgur.com/kGXGseR.png'/>
+          <img onClick={delAcct} id = 'trash' src='https://i.imgur.com/kGXGseR.png'/>
           </div>
         </div>
       </div>
