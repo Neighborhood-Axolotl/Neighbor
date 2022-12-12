@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
 
 function HomePage() {
+  function loginPage() {
+    window.location.href = '/loginPage';
+  }
+
+  function createAcctPage() {
+    window.location.href = '/createAccount';
+  }
+
   return (
     <div className='homeContainer'>
       <div className='leftInterface'>
@@ -25,9 +33,10 @@ function HomePage() {
           />
         </h1>
         <h2>"The go to source for small businesses in your neighborhood."</h2>
-        <h2 className="quoteSource" >-Mr. Rogers</h2>
+        <h2 className='quoteSource'>-Mr. Rogers</h2>
         <div>
           <img
+            onClick={() => loginPage()}
             className='loginImage'
             src='https://i.imgur.com/rvjQK1R.png'
             alt='login'
@@ -35,6 +44,7 @@ function HomePage() {
         </div>
         <div>
           <img
+            onClick={() => createAcctPage()}
             className='createAccountImage'
             src='https://i.imgur.com/hpMvW3E.png'
             alt='create account'

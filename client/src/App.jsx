@@ -4,7 +4,7 @@ import '../public/styles.scss';
 import HomePage from './HomePage.jsx';
 import LoginPage from './LoginPage.jsx';
 import CreateAcct from './CreateAcct';
-import LandingPage from './LandingPage'
+import LandingPage from './LandingPage';
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         <Route exact path='/'>
           <HomePage />
         </Route>
-        <Route path='/login'>
+        <Route path='/loginPage'>
           <LoginPage />
         </Route>
         <Route path='/createAccount'>
