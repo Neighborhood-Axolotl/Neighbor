@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import NavBar from './NavBar';
 
@@ -18,7 +19,6 @@ function LoginPage() {
   function handleMerchantLogin() {
     // fetch request for merchant authentication goes here
   }
-
   return (
     <div>
       <NavBar />

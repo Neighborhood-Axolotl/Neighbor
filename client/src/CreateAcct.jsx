@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import NavBar from './NavBar';
 
 function CreateAcct() {
+
   // state for consumer values
   const [consumerUsername, setConsumerUsername] = useState('');
   const [consumerPassword, setConsumerPassword] = useState('');
