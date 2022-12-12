@@ -4,9 +4,9 @@ import React, { useState, useEffect } from 'react';
 function MerchantCards() {
   return (
     <>
-      {merchantData.map((merchantImg) => {
-        const merchantImg = merchantData.image;
-        const merchantId = merchantData._id; 
+      {merchantData.map((data) => {
+        const merchantImg = data.image;
+        const merchantId = data._id; 
         return (
           <div>
             <section className='cardWrapper'>

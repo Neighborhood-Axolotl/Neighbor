@@ -1,30 +1,30 @@
 import React, { useState } from 'react';
-import { Switch, Route } from 'react-router-dom';
 import NavBar from './NavBar';
-import CreateAcctHeader from './CreateAcctHeader.jsx';
-import LoginHeader from './LoginHeader.jsx';
-import BusinessInfo from './BusinessInfo.jsx';
-
-{
-  /* <Switch>
-<Route path='/createAccount'>
-<BusinessInfo />
-</Route>
-</Switch> */
-}
 
 function LoginPage() {
+    // state for consumer values 
+
+  const [consumerUsernameLogin, setConsumerUsernameLogin] = useState('');
+  const [consumerPasswordLogin, setConsumerPasswordLogin] = useState('');
+
+    // state for merchant values 
+  const [merchantUsernameLogin, setMerchantUsernameLogin] = useState('');
+  const [merchantPasswordLogin, setMerchantPasswordLogin] = useState('');
+
+  function handleConsumerLogin() {
+    // fetch request for consumer authentication goes here
+  }
+
+  function handleMerchantLogin() {
+    // fetch request for merchant authentication goes here
+  }
+
   return (
     <div>
       <NavBar />
-      <Switch>
-        <Route path='/loginPage'>
-          <LoginHeader />
-        </Route>
-        <Route path='/createAccount'>
-          <CreateAcctHeader />
-        </Route>
-      </Switch>
+      <div>
+        <h2 className='login'>login</h2>
+      </div>
       <div className='loginContainer'>
         {/* hold both consumer and merchant login */}
         <div className='consMerchContainer'>
@@ -32,21 +32,38 @@ function LoginPage() {
           <div className='consumerLogin'>
             <div className='consumerAlignment'>
               <strong>consumer</strong>
-              <Switch>
-                <Route path='/loginPage'>
-                  <i className='italics'>one click login with google</i>
-                </Route>
-              </Switch>
             </div>
-            <form className="consumerForm">
+            <br />
+
+            <form className='consumerForm' onSubmit={handleConsumerLogin}>
               <div className='userLogin'>
-                <label htmlFor='userInput'>username: </label>
-                <input type='text' id='userInput'></input>
+                <label htmlFor='consumerUsernameLogin'>
+                  username:
+                  <input
+                    type='text'
+                    id='consumerUsernameLogin'
+                    value={consumerUsernameLogin}
+                    onChange={(event) =>
+                      setConsumerUsernameLogin(event.target.value)
+                    }
+                  />
+                </label>
               </div>
+
               <div className='userPW'>
-                <label htmlFor='userPW'>password: </label>
-                <input type='text' id='userPW'></input>
+                <label htmlFor='consumerPasswordLogin'>
+                  password:
+                  <input
+                    type='text'
+                    id='consumerPasswordLogin'
+                    value={consumerPasswordLogin}
+                    onChange={(event => {
+                      setConsumerPasswordLogin(event.target.value)
+                    })}
+                  />
+                </label>
               </div>
+              <input id='formButton' type='submit' value='submit' />
             </form>
           </div>
           {/* merchant login */}
@@ -54,20 +71,37 @@ function LoginPage() {
             <div className='merchantAlignment'>
               <strong>merchant</strong>
             </div>
-            <form className="merchantForm">
+            <br />
+            <form className='merchantForm' onSubmit={handleMerchantLogin}>
+
               <div className='merchantUsername'>
-                <label htmlFor='merchantUsername'>username: </label>
-                <input type='text' id='merchantUsername'></input>
+
+                <label htmlFor='merchantUsernameLogin'>
+                  username: 
+                <input 
+                type='text' 
+                id='merchantUsernameLogin'
+                value={merchantUsernameLogin}
+                onChange={(event) => {
+                  setMerchantUsernameLogin(event.target.value)
+                }}
+                />
+                </label>
+
               </div>
               <div className='merchantPassword'>
-                <label htmlFor='merchantPassword'>password: </label>
-                <input type='text' id='merchantPassword'></input>
-                <Switch>
-                  <Route path='/createAccount'>
-                    <BusinessInfo />
-                  </Route>
-                </Switch>
+                <label htmlFor='merchantPasswordLogin'>
+                  password: 
+                <input 
+                type='text' 
+                id='merchantPasswordLogin'
+                value={merchantPasswordLogin}
+                onChange={(event) => {
+                  setMerchantPasswordLogin(event.target.value)
+                }}/>
+                </label>
               </div>
+              <input id='formButton' type='submit' value='submit' />
             </form>
           </div>
         </div>
