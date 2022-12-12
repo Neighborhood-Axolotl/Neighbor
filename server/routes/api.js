@@ -16,6 +16,7 @@ router.post(
 );
 
 router.delete('/:_email', neighborControllers.deleteConsumers, (req, res) => {
+  console.log('hit delete router', req.params)
   res.status(200).json({});
 });
 
