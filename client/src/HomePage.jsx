@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+
 
 function HomePage() {
+
+  const history = useHistory();
+  
   function loginPage() {
-    window.location.href = '/loginPage';
+    history.push('/loginPage');
   }
 
   function createAcctPage() {
-    window.location.href = '/createAccount';
+   history.push('/createAccount');
   }
 
   return (
