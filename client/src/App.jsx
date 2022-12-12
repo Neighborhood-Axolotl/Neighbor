@@ -10,6 +10,9 @@ import AboutUs from './AboutUs';
 import UserInformation from './UserInformation'
 
 function App() {
+
+  const [dummyEmail, setDummyEmail] = useState('dummy@gmail.com'); 
+
   return (
     <div>
       <Switch>
@@ -19,11 +22,11 @@ function App() {
         </Route>
 
         <Route path='/loginPage'>
-          <LoginPage />
+          <LoginPage/>
         </Route>
 
         <Route path='/createAccount'>
-          <CreateAcct />
+          <CreateAcct dummyEmail={dummyEmail} setDummyEmail={setDummyEmail} />
         </Route>
 
         <Route path='/landing'>
@@ -39,7 +42,7 @@ function App() {
         </Route>
 
         <Route path='/userinformation'>
-          <UserInformation />
+          <UserInformation  dummyEmail={dummyEmail} setDummyEmail={setDummyEmail} />
         </Route>
 
       </Switch>

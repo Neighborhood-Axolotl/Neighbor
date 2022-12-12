@@ -5,11 +5,11 @@ import NavBar from './NavBar';
 function LoginPage() {
     // state for consumer values 
 
-  const [consumerUsernameLogin, setConsumerUsernameLogin] = useState('');
+  const [consumerEmailLogin, setConsumerEmailLogin] = useState('');
   const [consumerPasswordLogin, setConsumerPasswordLogin] = useState('');
 
     // state for merchant values 
-  const [merchantUsernameLogin, setMerchantUsernameLogin] = useState('');
+  const [merchantEmailLogin, setMerchantEmailLogin] = useState('');
   const [merchantPasswordLogin, setMerchantPasswordLogin] = useState('');
 
   function handleConsumerLogin() {
@@ -37,12 +37,12 @@ function LoginPage() {
 
             <form className='consumerForm' onSubmit={handleConsumerLogin}>
               <div className='userLogin'>
-                <label htmlFor='consumerUsernameLogin'>
-                  username:
+                <label htmlFor='consumerEmailLogin'>
+                  email:
                   <input
                     type='text'
                     id='consumerUsernameLogin'
-                    value={consumerUsernameLogin}
+                    value={consumerEmailLogin}
                     onChange={(event) =>
                       setConsumerUsernameLogin(event.target.value)
                     }
@@ -77,13 +77,13 @@ function LoginPage() {
               <div className='merchantUsername'>
 
                 <label htmlFor='merchantUsernameLogin'>
-                  username: 
+                  email: 
                 <input 
                 type='text' 
-                id='merchantUsernameLogin'
-                value={merchantUsernameLogin}
+                id='merchantEmailLogin'
+                value={merchantEmailLogin}
                 onChange={(event) => {
-                  setMerchantUsernameLogin(event.target.value)
+                  setMerchantEmailLogin(event.target.value)
                 }}
                 />
                 </label>

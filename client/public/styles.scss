@@ -271,6 +271,11 @@ table {
     height: 20px;
     width: auto;
   }
+
+  .userInfo {
+    height: 17px; 
+    width: auto; 
+  }
 }
 
 // NAVBAR END
@@ -286,11 +291,6 @@ table {
   padding-left: 2em;
   margin-top: 7rem;
   text-align: center;
-
-  // .consumerAlignment {
-  //   text-align: left;
-  //   margin-left: 7rem;
-  // }
 
   .consMerchContainer {
     display: grid;
@@ -510,9 +510,9 @@ form {
 }
 
 .userInformationTextContainer {
-
+  text-align: center;
   background-color: #f8f6f6;
-  height: 300px; 
+  height: 490px; 
   width: 650px; 
   border-radius: 30px; 
   margin: auto; 
@@ -526,4 +526,27 @@ form {
 
 #userLogo {
   height: 50px;
+}
+
+.buttonContainer {
+  display: flex; 
+  margin: auto; 
+  justify-content: center;
+  align-items: center;
+}
+#navigateButton {
+  height: 40px; 
+  width: auto; 
+}
+
+
+#trash {
+  width: 40px; 
+  height: auto; 
+  display: flex;
+  justify-content: end;
+}
+
+.firstName {
+  text-align: right;
 }

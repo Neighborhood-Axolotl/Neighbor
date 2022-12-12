@@ -1,16 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import NavBar from './NavBar';
+import { useHistory } from 'react-router-dom';
+import axios from 'axios';
+import UserInformation from './UserInformation'
 
-function CreateAcct() {
+function CreateAcct({setDummyEmail, dummyEmail}) {
 
+  useEffect(() => {
+  }, [dummyEmail])
   // state for consumer values
-  const [consumerUsername, setConsumerUsername] = useState('');
   const [consumerPassword, setConsumerPassword] = useState('');
   const [consumerEmail, setConsumerEmail] = useState('');
+  const [consumerFirstName, setConsumerFirstName] = useState('');
+  const [consumerLastName, setConsumerLastName] = useState('');
   const [consumerZipCode, setConsumerZipCode] = useState('');
+  const history = useHistory();
 
   // state for merchant values
-  const [merchantUsername, setMerchantUsername] = useState('');
   const [merchantPassword, setMerchantPassword] = useState('');
   const [businessName, setBusinessName] = useState('');
   const [typeOfBusiness, setTypeOfBusiness] = useState('');
@@ -20,8 +26,27 @@ function CreateAcct() {
   const [description, setDescription] = useState('');
   const [image, setImage] = useState('');
 
+  console.log('original dummy email', dummyEmail)
+
   function handleConsumerFormSubmit(event) {
     event.preventDefault();
+    setDummyEmail(consumerEmail); 
+    console.log('dummy email', dummyEmail)
+    
+    // come back to this and refactor if we have time to explore why we aren't able to simply pass in our object (body.body issue)
+      axios.post('http://localhost:3000/api', {
+      body: {
+        firstName: consumerFirstName, 
+        lastName: consumerLastName,
+        email: consumerEmail, 
+        password: consumerPassword, 
+        zipCode: consumerZipCode
+      }
+      })
+      .then(
+        //this should be landing
+      history.push('/userinformation')
+      );
     // fetch request logic goes here
   }
 
@@ -33,9 +58,9 @@ function CreateAcct() {
   return (
     <div>
       <NavBar />
-
       {/* header for the create account page */}
       <div>
+
         <h2 className='createAccount'>creating an account is easy</h2>
       </div>
 
@@ -52,29 +77,29 @@ function CreateAcct() {
 
             {/* form for consumer */}
             <form onSubmit={handleConsumerFormSubmit}>
-              <label>
-                username:
+            <label>
+                first name: 
                 <input
                   type='text'
-                  name='username'
-                  value={consumerUsername}
-                  onChange={(event) => setConsumerUsername(event.target.value)}
+                  name='firstName'
+                  value={consumerFirstName}
+                  onChange={(event) => setConsumerFirstName(event.target.value)}
                 />
               </label>
               <br />
 
               <label>
-                password:
+                last name: 
                 <input
                   type='text'
-                  name='password'
-                  value={consumerPassword}
-                  onChange={(event) => setConsumerPassword(event.target.value)}
+                  name='lastName'
+                  value={consumerLastName}
+                  onChange={(event) => setConsumerLastName(event.target.value)}
                 />
               </label>
               <br />
 
-              <label>
+            <label>
                 email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <input
                   type='text'
@@ -86,7 +111,18 @@ function CreateAcct() {
               <br />
 
               <label>
-                zip code:&nbsp;&nbsp;
+                password: 
+                <input
+                  type='text'
+                  name='password'
+                  value={consumerPassword}
+                  onChange={(event) => setConsumerPassword(event.target.value)}
+                />
+              </label>
+              <br />
+
+              <label>
+                zip code:&nbsp;&nbsp; 
                 <input
                   type='text'
                   name='consumerZipCode'
@@ -109,13 +145,22 @@ function CreateAcct() {
             <br></br>
 
             <form onSubmit={handleMerchantFormSubmit}>
-              <label>
+              {/* <label>
                 username:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <input
                   type='text'
                   name='username'
                   value={merchantUsername}
                   onChange={(event) => setMerchantUsername(event.target.value)}
+                />
+              </label> */}
+                <label>
+                email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input
+                  type='text'
+                  name='email'
+                  value={businessEmail}
+                  onChange={(event) => setBusinessEmail(event.target.value)}
                 />
               </label>
               <br />
@@ -172,17 +217,6 @@ function CreateAcct() {
                   name='businesszipcode'
                   value={businessZipCode}
                   onChange={(event) => setBusinessZipCode(event.target.value)}
-                />
-              </label>
-              <br />
-
-              <label>
-                email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <input
-                  type='text'
-                  name='email'
-                  value={businessEmail}
-                  onChange={(event) => setBusinessEmail(event.target.value)}
                 />
               </label>
               <br />
