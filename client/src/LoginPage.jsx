@@ -1,19 +1,20 @@
-
 import React, { useState } from 'react';
 import NavBar from './NavBar';
+import { useHistory } from 'react-router-dom';
 
 function LoginPage() {
-    // state for consumer values 
+  // state for consumer values
+  const history = useHistory();
 
   const [consumerEmailLogin, setConsumerEmailLogin] = useState('');
   const [consumerPasswordLogin, setConsumerPasswordLogin] = useState('');
 
-    // state for merchant values 
+  // state for merchant values
   const [merchantEmailLogin, setMerchantEmailLogin] = useState('');
   const [merchantPasswordLogin, setMerchantPasswordLogin] = useState('');
 
   function handleConsumerLogin() {
-    // fetch request for consumer authentication goes here
+    history.push('/landing')
   }
 
   function handleMerchantLogin() {
@@ -41,10 +42,10 @@ function LoginPage() {
                   email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <input
                     type='text'
-                    id='consumerUsernameLogin'
+                    id='consumerEmailLogin'
                     value={consumerEmailLogin}
                     onChange={(event) =>
-                      setConsumerUsernameLogin(event.target.value)
+                      setConsumerEmailLogin(event.target.value)
                     }
                   />
                 </label>
@@ -57,9 +58,9 @@ function LoginPage() {
                     type='text'
                     id='consumerPasswordLogin'
                     value={consumerPasswordLogin}
-                    onChange={(event => {
-                      setConsumerPasswordLogin(event.target.value)
-                    })}
+                    onChange={(event) => {
+                      setConsumerPasswordLogin(event.target.value);
+                    }}
                   />
                 </label>
               </div>
@@ -73,10 +74,9 @@ function LoginPage() {
             </div>
             <br />
             <form className='merchantForm' onSubmit={handleMerchantLogin}>
-
               <div className='merchantUsername'>
-
                 <label htmlFor='merchantUsernameLogin'>
+
                   email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <input 
                 type='text' 
@@ -86,19 +86,20 @@ function LoginPage() {
                   setMerchantEmailLogin(event.target.value)
                 }}
                 />
-                </label>
 
+                </label>
               </div>
               <div className='merchantPassword'>
                 <label htmlFor='merchantPasswordLogin'>
-                  password: 
-                <input 
-                type='text' 
-                id='merchantPasswordLogin'
-                value={merchantPasswordLogin}
-                onChange={(event) => {
-                  setMerchantPasswordLogin(event.target.value)
-                }}/>
+                  password:
+                  <input
+                    type='text'
+                    id='merchantPasswordLogin'
+                    value={merchantPasswordLogin}
+                    onChange={(event) => {
+                      setMerchantPasswordLogin(event.target.value);
+                    }}
+                  />
                 </label>
               </div>
               <input id='formButton' type='submit' value='submit' />

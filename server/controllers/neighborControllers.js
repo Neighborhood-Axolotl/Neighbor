@@ -8,7 +8,9 @@ const neighborControllers = {};
 // get request to get consumer data needs to be an object containing the property email and the user email you're looking to get back
 neighborControllers.getConsumers = async (req, res, next) => {
   try {
-    res.locals.consumers = await Consumers.find({ email: req.params.email}).exec();
+    res.locals.consumers = await Consumers.find({
+      email: req.params.email,
+    }).exec();
     console.log('stored consumer: ', res.locals.consumers);
     return next();
   } catch (err) {
@@ -30,7 +32,7 @@ neighborControllers.createConsumers = ({ body }, res, next) => {
       password: body.body.password,
       zipCode: body.body.zipCode,
     });
-    
+
     return next();
   } catch (err) {
     return next({
@@ -41,10 +43,11 @@ neighborControllers.createConsumers = ({ body }, res, next) => {
   }
 };
 
-// define controller for deleting user 
-neighborControllers.deleteConsumers = async ({ body }, res, next) => {
+// define controller for deleting user
+neighborControllers.deleteConsumers = async (req, res, next) => {
   try {
-    await Consumers.deleteOne({ email: body.email }).exec();
+    console.log('REQ.PARAMS', req.params);
+    await Consumers.deleteOne({ email: req.params._email }).exec();
     return next();
   } catch (err) {
     return next({
