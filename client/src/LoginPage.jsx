@@ -38,7 +38,7 @@ function LoginPage() {
             <form className='consumerForm' onSubmit={handleConsumerLogin}>
               <div className='userLogin'>
                 <label htmlFor='consumerEmailLogin'>
-                  email:
+                  email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <input
                     type='text'
                     id='consumerUsernameLogin'
@@ -77,7 +77,7 @@ function LoginPage() {
               <div className='merchantUsername'>
 
                 <label htmlFor='merchantUsernameLogin'>
-                  email: 
+                  email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <input 
                 type='text' 
                 id='merchantEmailLogin'

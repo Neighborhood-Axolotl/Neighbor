@@ -15,19 +15,18 @@ function LandingPage() {
 
           <form>
             <label>
+              Zip Code:
               <input
               type='text'
               name='searchZipcode'
               value={searchZipcode}
               onChange={(event) => {setSearchZipcode(event.target.value)}}/>
             </label>
-
-            <input id='formButton' type='submit' value='search' />
           </form>
 
         </div>
       <section className='merchantWrapper'>
-      <MerchantCards />
+      <MerchantCards searchZipcode={searchZipcode} />
     </section>
     </div>
   );
