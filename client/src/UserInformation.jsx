@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import NavBar from './NavBar';
-import MerchantCards from './merchantCards';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 
@@ -17,14 +16,16 @@ function UserInformation({dummyEmail}) {
   const history = useHistory();
 
   function handleUpdateForm() {
-   
+   // logic to update user information goes here. the consumer is identified with an email passed in as params (since emails are unique) but can also be modified to take an id. the backend code is written to grab a key value pair (what property needs to be updated and with what value). It'll update just that value. 
   }
 
+  // take you to search for merchants
   function handleImageOnClick() {
     history.push('/landing')
   }
 
-function delAcct () {
+  // deletes a user account
+function deleteAcct () {
   axios.delete(`http://localhost:3000/api/${data.email}`)
   .then(()=> {
     history.push('/')
@@ -120,7 +121,7 @@ function delAcct () {
           <br />
           <br />
           <div id='trashContainer'>
-          <img onClick={delAcct} id = 'trash' src='https://i.imgur.com/kGXGseR.png'/>
+          <img onClick={deleteAcct} id = 'trash' src='https://i.imgur.com/kGXGseR.png'/>
           </div>
         </div>
       </div>

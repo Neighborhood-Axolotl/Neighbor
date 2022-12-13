@@ -2,21 +2,21 @@ import React, { useState, useEffect } from 'react';
 import NavBar from './NavBar';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
-import UserInformation from './UserInformation'
 
-function CreateAcct({setDummyEmail, dummyEmail}) {
+function CreateAcct({ setDefaultEmail, defaultEmail }) {
+  useEffect(() => {}, [defaultEmail]);
+  // State for consumer
+  // These values get sent to the MongoDb
+  // Passwords are currently not encrypted using BCrypt
 
-  useEffect(() => {
-  }, [dummyEmail])
-  // state for consumer values
   const [consumerPassword, setConsumerPassword] = useState('');
   const [consumerEmail, setConsumerEmail] = useState('');
   const [consumerFirstName, setConsumerFirstName] = useState('');
   const [consumerLastName, setConsumerLastName] = useState('');
   const [consumerZipCode, setConsumerZipCode] = useState('');
-  const history = useHistory();
 
-  // state for merchant values
+  // State for merchant values
+  // Currently not set up in the backend.
   const [merchantPassword, setMerchantPassword] = useState('');
   const [businessName, setBusinessName] = useState('');
   const [typeOfBusiness, setTypeOfBusiness] = useState('');
@@ -26,41 +26,41 @@ function CreateAcct({setDummyEmail, dummyEmail}) {
   const [description, setDescription] = useState('');
   const [image, setImage] = useState('');
 
-  console.log('original dummy email', dummyEmail)
+  const history = useHistory();
 
   function handleConsumerFormSubmit(event) {
     event.preventDefault();
-    setDummyEmail(consumerEmail); 
-    console.log('dummy email', dummyEmail)
-    
-    // come back to this and refactor if we have time to explore why we aren't able to simply pass in our object (body.body issue)
-      axios.post('http://localhost:3000/api', {
-      body: {
-        firstName: consumerFirstName, 
-        lastName: consumerLastName,
-        email: consumerEmail, 
-        password: consumerPassword, 
-        zipCode: consumerZipCode
-      }
+    setDefaultEmail(consumerEmail);
+
+    // Axios request to send user information to our backend
+    axios
+      .post('http://localhost:3000/api', {
+        body: {
+          firstName: consumerFirstName,
+          lastName: consumerLastName,
+          email: consumerEmail,
+          password: consumerPassword,
+          zipCode: consumerZipCode,
+        },
       })
       .then(
-        //this should be landing
-      history.push('/userinformation')
+        // Routes to the landing page upon login
+        // Using history.push since it doesn't force a refresh which would get rid of our ability to store the email address persisting in state to load the user data
+        history.push('/landing')
       );
-    // fetch request logic goes here
   }
 
   function handleMerchantFormSubmit(event) {
     event.preventDefault();
-    // fetch request logic goes here
+    // Axios logic for handling merchant user creation should go here. 
   }
+
+  // Spacing below was done using manual spacers. Should be done via divs in SCSS. 
 
   return (
     <div>
       <NavBar />
-      {/* header for the create account page */}
       <div>
-
         <h2 className='createAccount'>creating an account is easy</h2>
       </div>
 
@@ -77,8 +77,8 @@ function CreateAcct({setDummyEmail, dummyEmail}) {
 
             {/* form for consumer */}
             <form onSubmit={handleConsumerFormSubmit}>
-            <label>
-                first name: 
+              <label>
+                first name:
                 <input
                   type='text'
                   name='firstName'
@@ -89,7 +89,7 @@ function CreateAcct({setDummyEmail, dummyEmail}) {
               <br />
 
               <label>
-                last name: 
+                last name:
                 <input
                   type='text'
                   name='lastName'
@@ -99,7 +99,7 @@ function CreateAcct({setDummyEmail, dummyEmail}) {
               </label>
               <br />
 
-            <label>
+              <label>
                 email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <input
                   type='text'
@@ -111,7 +111,7 @@ function CreateAcct({setDummyEmail, dummyEmail}) {
               <br />
 
               <label>
-                password: 
+                password:
                 <input
                   type='text'
                   name='password'
@@ -122,7 +122,7 @@ function CreateAcct({setDummyEmail, dummyEmail}) {
               <br />
 
               <label>
-                zip code:&nbsp;&nbsp; 
+                zip code:&nbsp;&nbsp;
                 <input
                   type='text'
                   name='consumerZipCode'
@@ -145,16 +145,7 @@ function CreateAcct({setDummyEmail, dummyEmail}) {
             <br></br>
 
             <form onSubmit={handleMerchantFormSubmit}>
-              {/* <label>
-                username:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <input
-                  type='text'
-                  name='username'
-                  value={merchantUsername}
-                  onChange={(event) => setMerchantUsername(event.target.value)}
-                />
-              </label> */}
-                <label>
+              <label>
                 email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <input
                   type='text'
