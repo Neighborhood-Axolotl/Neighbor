@@ -1,40 +1,555 @@
-
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary, time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 
 body {
-	line-height: 1;
+  line-height: 1;
 }
 
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
 
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
 
-blockquote:before, blockquote:after, q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
 }
 
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+// HOME PAGE START
+.homeContainer {
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  justify-items: center;
+  background-color: #282426;
+
+  .leftImage {
+    margin: 0;
+    padding: 0;
+    width: 550px;
+    height: 950px;
+  }
+
+  .rightImage {
+    width: 550px;
+    height: 950px;
+  }
+
+  .middleImage {
+    margin-bottom: 5rem;
+    width: 100px;
+    height: 100px;
+  }
+
+  .neighborImage {
+    margin-bottom: 1rem;
+  }
+
+  .loginImage {
+    width: 70px;
+    height: auto;
+  }
+
+  .createAccountImage {
+    width: 180px;
+    height: auto;
+  }
+
+  .middleInterface {
+    margin-top: 25px;
+    color: rgb(210, 210, 210);
+    text-align: center;
+    h1 {
+      font-size: 6rem;
+      margin-bottom: 0px;
+    }
+    h2 {
+      font-size: xx-large;
+      margin-left: 7rem;
+      width: 500px;
+    }
+
+    .quoteSource {
+      margin-top: 20px;
+      margin-bottom: 200px;
+    }
+
+    div {
+      font-size: x-large;
+      margin: 10px;
+    }
+  }
+}
+// HOME PAGE END
+
+// NAVBAR START
+// .navBar {
+//   color: white;
+//   background-color: #282426;
+//   display: grid;
+//   grid-template-columns: 1fr 1fr 1fr;
+//   align-items: center;
+//   padding-left: 5rem;
+//   height: 7rem;
+
+//   .leftImage {
+//     width: 100px;
+//     height: 100px;
+//   }
+
+//   .middleImage {
+//     width: 400px;
+//     height: 100px;
+//   }
+
+//   .teamAndAboutNeighbor {
+//     text-align: center;
+//   }
+
+//   .teamImage {
+//     padding-left: 10rem;
+//   }
+
+//   .aboutNeighborImage {
+//     padding-left: 1rem;
+//     width: 200px;
+//     height: 30px;
+//   }
+// }
+
+.navBar {
+  background-color: #282426;
+  display: flex;
+  align-items: center;
+  height: 7rem;
+  color: white;
+
+  .leftNav {
+    display: flex;
+    float: left;
+    padding-left: 10px;
+    padding-right: 90px;
+  }
+
+  .spacer {
+    width: 100%;
+  }
+  .leftImage {
+    width: 75px;
+    height: auto;
+    padding-right: 105px
+  }
+
+  .siteFontLogo {
+    width: 400px;
+    height: auto;
+    padding-left: 40px;
+  }
+
+  .rightNav {
+    display: flex;
+    float: right;
+    
+  }
+
+  .teamImage {
+    height: 20px;
+    width: auto;
+  }
+  .aboutNeighborImage {
+    height: 20px;
+    width: auto;
+  }
+
+  .userInfo {
+    height: 20px; 
+    width: auto; 
+  }
+}
+
+// NAVBAR END
+
+// LOGIN PAGE START
+.login {
+  text-align: center;
+  margin-top: 12rem;
+  font-size: 2.5rem;
+}
+
+.loginContainer {
+  padding-left: 2em;
+  margin-top: 7rem;
+  text-align: center;
+
+  .consMerchContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    justify-content: center;
+  }
+
+  .italics {
+    font-style: italic;
+    font-size: 1.75rem;
+  }
+
+  strong {
+    font-size: 2.5rem;
+    padding-right: 0.5em;
+  }
+
+  // CAN THE TWO BELOW BE COMBINED?
+
+  .userLogin {
+    // font-size: 1.5rem;
+    #userInput {
+      border-radius: 4rem;
+      height: 1.25rem;
+    }
+  }
+
+  .userPW {
+    // font-size: 1.5rem;
+    #userPW {
+      border-radius: 4rem;
+      height: 1.25rem;
+    }
+  }
+
+  .merchantLogin {
+    border-left: 2px solid black;
+    // font-size: 1.5rem;
+
+    // .merchantForm {
+    //   margin-top: 1rem;
+    //   text-align: left;
+    //   margin-left: 12rem;
+    // }
+
+    .merchantAlignment {
+      // text-align: left;
+      // margin-left: 8rem;
+    }
+    #merchantUsername {
+      border-radius: 4rem;
+      height: 1.25rem;
+    }
+    #merchantPassword {
+      border-radius: 4rem;
+      height: 1.25rem;
+    }
+  }
+}
+// LOGIN PAGE END
+
+// CREATE ACCOUNT PAGE START
+
+.createAccount {
+  text-align: center;
+  margin-top: 5rem;
+  font-size: 2.5rem;
+}
+
+.businessInfo {
+  font-size: 1.5rem;
+  .merchantBusinessName {
+    #merchangeBusinessName {
+      border-radius: 4rem;
+      height: 1.25rem;
+    }
+    .merchangeAddress {
+      #merchangeAddress {
+        border-radius: 4rem;
+        height: 1.25rem;
+      }
+    }
+    .merchantZipCode {
+      #merchantZipCode {
+        border-radius: 4rem;
+      }
+    }
+  }
+}
+
+// CREATE ACCOUNT PAGE BUSINESS INFO END
+
+// GENERAL BUTTON STYLING START
+
+#formButton {
+  font-family: roboto slab;
+  color: rgb(40, 38, 38);
+  background-color: white;
+}
+
+// all form inputs
+form {
+  input {
+    border-radius: 4rem;
+    margin: 0.75rem;
+    height: 1.25rem;
+  }
+}
+
+// GENERAL BUTTON STYLING END
+
+// LANDING PAGE
+
+// outer box for all market cards 
+.merchantWrapper {
+  display: flex;
+  flex: 0 0 0 0 20%;
+  flex-wrap: wrap;
+}
+
+// box for each individual merchant card 
+.cardWrapper {
+  display: flex;
+  flex-direction: row;
+  background-color: #282426;
+  height: 250px;
+  width: 250px;
+  margin: 25px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+// location and size styling for merchant cards 
+.eachMerchantImage {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  height: 230px;
+  width: 230px;
+}
+
+#merchantImage {
+  display: block;
+  border-radius: 10px;
+}
+
+// search bar styling 
+.searchBar {
+  margin-top: 20px;
+  text-align: center;
+}
+
+//  TEAM PAGE STARTS HERE
+
+// individual team photo 
+.teamPhoto {
+  height: 200px;
+  width: auto;
+  padding: 40px;
+}
+
+// styling for all four team photos
+.allTeamPhotos {
+  padding-top: 70px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+// text underneath each photo 
+.teamText {
+  text-align: center;
+}
+
+
+// ABOUT US START
+
+// outmost container
+.aboutUsContainer {
+  display: flex;
+  margin: auto; 
+  margin-top: 150px; 
+  justify-content: center;
+  align-items: center;
+}
+
+// styling for the text box 
+.aboutUsTextContainer {
+  background-color: #f8f6f6;
+  height: 400px; 
+  width: 650px; 
+  border-radius: 30px; 
+  margin: auto; 
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  justify-content: center;
+  align-items: center;
+  line-height: 23px;
+  padding: 50px; 
+  overflow: scroll; 
+}
+
+// about us text logo in the text box 
+#aboutUsLogo {
+  height: 30px;
+  width: auto;
+}
+
+.userInformationContainer {
+  display: flex;
+  margin: auto; 
+  margin-top: 150px; 
+  justify-content: center;
+  align-items: center;
+}
+
+.userInformationTextContainer {
+  text-align: center;
+  background-color: #f8f6f6;
+  height: 490px; 
+  width: 650px; 
+  border-radius: 30px; 
+  margin: auto; 
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  justify-content: center;
+  align-items: center;
+  line-height: 23px;
+  padding: 50px; 
+  overflow: scroll; 
+}
+
+#userLogo {
+  height: 50px;
+}
+
+.buttonContainer {
+  display: flex; 
+  margin: auto; 
+  justify-content: center;
+  align-items: center;
+}
+#navigateButton {
+  height: 40px; 
+  width: auto; 
+}
+
+
+#trash {
+  width: 40px; 
+  height: auto; 
+  display: flex;
+  justify-content: end;
+}
+
+.firstName {
+  text-align: right;
 }
