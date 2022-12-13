@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import NavBar from './NavBar';
 import MerchantCards from './merchantCards';
 
+// Imported mock data from MerchantCards.jsx
+// Created a form and button to search for merchants by zip codes. 
 function LandingPage() {
-  const [data, setData] = useState([]);
   const [searchZipcode, setSearchZipcode] = useState(''); 
 
   return (

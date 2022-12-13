@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
 
@@ -30,13 +30,11 @@ function HomePage() {
           src='https://i.imgur.com/AHFcYv1.png'
           alt='shop-logo'
         />
-        <h1>
           <img
             className='neighborImage'
             src='https://i.imgur.com/pD5v9ZC.png'
             alt='Neighbor'
           />
-        </h1>
         <h2>"The go to source for small businesses in your neighborhood."</h2>
         <h2 className='quoteSource'>-Mr. Rogers</h2>
         <div>

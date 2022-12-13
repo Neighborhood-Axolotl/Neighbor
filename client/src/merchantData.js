@@ -1,4 +1,7 @@
 export default [
+
+  // mock data for merchants.
+  
     {
       _id: 1,
       storeName: 'Al di la',

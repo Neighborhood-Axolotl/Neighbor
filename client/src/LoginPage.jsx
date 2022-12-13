@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import NavBar from './NavBar';
 import { useHistory } from 'react-router-dom';
 
 function LoginPage() {
-  // state for consumer values
   const history = useHistory();
 
+  // state for consumer values
   const [consumerEmailLogin, setConsumerEmailLogin] = useState('');
   const [consumerPasswordLogin, setConsumerPasswordLogin] = useState('');
 
@@ -14,11 +14,13 @@ function LoginPage() {
   const [merchantPasswordLogin, setMerchantPasswordLogin] = useState('');
 
   function handleConsumerLogin() {
+    // logic for consumers logging in should go here. 
+    // currently redirects to landing page
     history.push('/landing')
   }
 
   function handleMerchantLogin() {
-    // fetch request for merchant authentication goes here
+    // logic for merchants logging in should go here
   }
   return (
     <div>

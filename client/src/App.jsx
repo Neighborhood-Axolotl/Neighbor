@@ -9,10 +9,20 @@ import Team from './Team';
 import AboutUs from './AboutUs'; 
 import UserInformation from './UserInformation'
 
+
 function App() {
 
-  const [dummyEmail, setDummyEmail] = useState('dummy@gmail.com'); 
+  // Declare a state holding the users entered email in the highest component
+    // This should not be stored in state as it doesn't persist upon refresh 
+    // A better method to store the email would be in localStorage or cookies
+    // You need the email or id (a unique identifier) so you know which information to show on the user information page 
+      // Currently, the email gets stored in state upon creation of an account and using the email in state, the user information is populated. 
+  const [defaultEmail, setDefaultEmail] = useState(''); 
 
+
+  // Routes defined below for pages 
+  // Prop driling the props for email in User Information and Create Account
+    // Should also be in login page but ran out of time 
   return (
     <div>
       <Switch>
@@ -26,7 +36,7 @@ function App() {
         </Route>
 
         <Route path='/createAccount'>
-          <CreateAcct dummyEmail={dummyEmail} setDummyEmail={setDummyEmail} />
+          <CreateAcct defaultEmail={defaultEmail} setDefaultEmail={setDefaultEmail} />
         </Route>
 
         <Route path='/landing'>
@@ -42,7 +52,7 @@ function App() {
         </Route>
 
         <Route path='/userinformation'>
-          <UserInformation  dummyEmail={dummyEmail} setDummyEmail={setDummyEmail} />
+          <UserInformation  defaultEmail={defaultEmail} setDefaultEmail={setDefaultEmail} />
         </Route>
 
       </Switch>
