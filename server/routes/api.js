@@ -7,8 +7,7 @@ router.get('/:email', neighborControllers.getConsumers, (req, res) => {
   res.status(200).json(res.locals.consumers);
 });
 
-router.post(
-  '/',
+router.post('/',
   neighborControllers.createConsumers,
   (req, res) => {
     res.status(200);
